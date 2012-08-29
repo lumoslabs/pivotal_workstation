@@ -7,12 +7,12 @@ unless File.exists?(node["iterm2_app_path"])
   end
 
   execute "unzip iterm2" do
-    command "unzip #{Chef::Config[:file_cache_path]}/iTerm2.zip -d #{Chef::Config[:file_cache_path]}/"
+    command "sudo unzip -o #{Chef::Config[:file_cache_path]}/iTerm2.zip -d #{Chef::Config[:file_cache_path]}/"
     user WS_USER
   end
 
   execute "copy iterm2 to /Applications" do
-    command "mv #{Chef::Config[:file_cache_path]}/iTerm.app #{Regexp.escape(node["iterm2_app_path"])}"
+    command "sudo mv #{Chef::Config[:file_cache_path]}/iTerm.app #{Regexp.escape(node["iterm2_app_path"])}"
     user WS_USER
     group "admin"
   end
