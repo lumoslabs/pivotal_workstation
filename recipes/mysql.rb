@@ -17,7 +17,12 @@ include_recipe "pivotal_workstation::homebrew"
   end
 end
 
-brew_install("mysql")
+execute "tap the homebrew" do
+  command "brew homebrew/version"
+  user WS_USER
+end
+
+brew_install("mysql51 --use-gcc")
 
 ruby_block "copy mysql plist to ~/Library/LaunchAgents" do
   block do
