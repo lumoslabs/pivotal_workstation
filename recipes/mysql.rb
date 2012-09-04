@@ -18,7 +18,7 @@ include_recipe "pivotal_workstation::homebrew"
 end
 
 execute "tap the homebrew" do
-  command "brew homebrew/version"
+  command "brew tap --repair homebrew/versions"
   user WS_USER
 end
 
@@ -27,8 +27,8 @@ brew_install("mysql51 --use-gcc")
 ruby_block "copy mysql plist to ~/Library/LaunchAgents" do
   block do
     active_mysql = Pathname.new("/usr/local/bin/mysql").realpath
-    plist_location = (active_mysql + "../../"+"homebrew.mxcl.mysql.plist").to_s
-    destination = "#{WS_HOME}/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+    plist_location = (active_mysql + "../../"+"com.mysql.mysqld.plist").to_s
+    destination = "#{WS_HOME}/Library/LaunchAgents/com.mysql.mysqld.plist"
     system("cp #{plist_location} #{destination} && chown #{WS_USER} #{destination}") || raise("Couldn't find the plist")
   end
 end
@@ -44,7 +44,7 @@ ruby_block "mysql_install_db" do
 end
 
 execute "load the mysql plist into the mac daemon startup thing" do
-  command "launchctl load -w #{WS_HOME}/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+  command "launchctl load -w #{WS_HOME}/Library/LaunchAgents/com.mysql.mysqld.plist"
   user WS_USER
   not_if { system("launchctl list com.mysql.mysqld") }
 end
