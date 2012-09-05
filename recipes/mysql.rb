@@ -17,7 +17,13 @@ include_recipe "pivotal_workstation::homebrew"
   end
 end
 
-execute "tap the homebrew" do
+execute "tap the brew" do
+  command "brew tap homebrew/versions"
+  creates "/usr/local/Library/Taps/homebrew-versions/"
+  user WS_USER
+end
+
+execute "repair the brew" do
   command "brew tap --repair homebrew/versions"
   user WS_USER
 end
