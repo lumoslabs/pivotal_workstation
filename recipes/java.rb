@@ -1,5 +1,5 @@
 pivotal_workstation_package "JavaForOSX" do
-  source "http://support.apple.com/downloads/DL1515/en_US/"
+  source "http://support.apple.com/downloads/DL1421/en_US/"
   volumes_dir "Java for OS X 2012-004"
   action :install
   type "pkg"
