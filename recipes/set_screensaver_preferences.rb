@@ -20,5 +20,5 @@ end
 # end
 
 execute "set display, disk and computer sleep times" do
-  command "pmset -a displaysleep 2 disksleep 0 sleep 0"
+  command "pmset -a displaysleep 1 disksleep 0 sleep 0"
 end
