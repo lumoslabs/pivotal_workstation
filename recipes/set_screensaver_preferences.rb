@@ -1,7 +1,7 @@
 pivotal_workstation_defaults "ask for password when screen is locked" do
   domain 'com.apple.screensaver'
   key 'askForPassword'
-  integer 1
+  boolean true
 end
 
 pivotal_workstation_defaults "wait 60 seconds between screensaver & lock" do
@@ -20,5 +20,5 @@ Dir["#{plist_dir}/com.apple.screensaver.*.plist"].each do |file|
 end
 
 execute "set display, disk and computer sleep times" do
-  command "pmset -a displaysleep 1 disksleep 0 sleep 0"
+  command "pmset -a displaysleep 2 disksleep 0 sleep 0"
 end
