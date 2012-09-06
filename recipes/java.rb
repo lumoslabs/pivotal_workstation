@@ -1,6 +1,6 @@
-pivotal_workstation_package "JavaForOSX" do
+pivotal_workstation_package "JavaForMacOSX10.7" do
   source "http://support.apple.com/downloads/DL1421/en_US/"
-  volumes_dir "Java for OS X 2012-004"
+  volumes_dir "Java for Mac OS X 10.7"
   action :install
   type "pkg"
   package_id "com.apple.pkg.JavaForMacOSX107"
