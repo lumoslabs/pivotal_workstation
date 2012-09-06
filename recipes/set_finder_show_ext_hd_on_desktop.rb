@@ -8,3 +8,4 @@ pivotal_workstation_defaults "show removable media on desktop" do
   domain 'com.apple.finder'
   key 'ShowRemovableMediaOnDesktop'
   boolean true
+end
