@@ -1,7 +1,7 @@
 pivotal_workstation_defaults "ask for password when screen is locked" do
   domain 'com.apple.screensaver'
   key 'askForPassword'
-  boolean true
+  integer 1
 end
 
 pivotal_workstation_defaults "wait 60 seconds between screensaver & lock" do
