@@ -4,11 +4,11 @@ pivotal_workstation_defaults "ask for password when screen is locked" do
   integer 1
 end
 
-# pivotal_workstation_defaults "wait 60 seconds between screensaver & lock" do
-#   domain 'com.apple.screensaver'
-#   key 'askForPasswordDelay'
-#   float 60
-# end
+pivotal_workstation_defaults "wait 60 seconds between screensaver & lock" do
+  domain 'com.apple.screensaver'
+  key 'askForPasswordDelay'
+  float 5
+end
 
 plist_dir = ENV['HOME'] + "/Library/Preferences/ByHost"
 Dir["#{plist_dir}/com.apple.screensaver.*.plist"].each do |file|
