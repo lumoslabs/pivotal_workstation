@@ -1,5 +1,5 @@
 pivotal_workstation_package "JavaForMacOSX10.7" do
-  source "http://support.apple.com/downloads/DL1421/en_US/"
+  source "https://s3.amazonaws.com/lumos-devops/installers/JavaForMacOSX10.7.dmg"
   volumes_dir "Java for Mac OS X 10.7"
   action :install
   type "pkg"
