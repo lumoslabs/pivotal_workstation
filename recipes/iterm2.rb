@@ -17,10 +17,4 @@ unless File.exists?(node["iterm2_app_path"])
     group "admin"
   end
 
-  cookbook_file "/Users/#{WS_USER}/Library/Preferences/com.googlecode.iterm2.plist" do
-    source "com.googlecode.iterm2.plist"
-    user WS_USER
-    mode "0600"
-  end
-
 end
