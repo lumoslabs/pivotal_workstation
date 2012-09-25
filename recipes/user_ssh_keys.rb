@@ -17,6 +17,7 @@ keys = "#{WS_HOME}/.ssh/#{WS_USER}_rsa"
 execute "create SSH keys for #{WS_USER}" do
   command "ssh-keygen -t rsa -N '' -f #{keys}"
   creates "#{keys}"
-  owner WS_USER
+  user WS_USER
   group "staff"
+  not_if "test -e #{keys}"
 end
