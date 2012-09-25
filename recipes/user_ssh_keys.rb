@@ -13,8 +13,10 @@ file "#{WS_HOME}/.ssh/known_hosts" do
 end
 
 #User SSH Keys
+keys = "#{WS_HOME}/.ssh/#{WS_USER}_rsa"
 execute "create SSH keys for #{WS_USER}" do
-  command "ssh-keygen -t rsa -N '' -f #{WS_HOME}/.ssh/#{WS_USER}"
-  user WS_USER
-  not_if "test -e #{WS_HOME}/.ssh/#{WS_USER}_rsa"
+  command "ssh-keygen -t rsa -N '' -f #{keys}"
+  creates "#{keys}"
+  owner WS_USER
+  group "staff"
 end
