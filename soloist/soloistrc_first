@@ -1,5 +1,4 @@
 cookbook_paths:
 - /var/chef/cookbooks/
 recipes:
-- pivotal_workstation::lumos_osx_basic
 - pivotal_workstation::lumos_osx_dev
