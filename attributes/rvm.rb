@@ -8,4 +8,5 @@ node.default["rvm"]= {
     "ruby-1.9.3-p125" => { :env => "CC=gcc-4.2" },
   },
   "default_ruby" => "ruby-1.9.3-p125"
+  "default_rubygems" => "1.8.10"
 }

@@ -43,3 +43,8 @@ execute "making #{node["rvm"]["default_ruby"]} with rvm the default" do
   command "#{::RVM_COMMAND} alias create default #{node["rvm"]["default_ruby"]}"
   user WS_USER
 end
+
+execute "install rubygems #{node["rvm"]["default_rubygems"]}" do
+  command "#{::RVM_COMMAND} rubygems #{node["rvm"]["default_rubygems"]}"
+  user WS_USER
+end
