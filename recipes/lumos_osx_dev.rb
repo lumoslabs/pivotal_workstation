@@ -1,6 +1,7 @@
 include_recipe "pivotal_workstation::homebrew"
 include_recipe "pivotal_workstation::rvm"
 include_recipe "pivotal_workstation::git"
+include_recipe "pivotal_workstation::vim"
 include_recipe "pivotal_workstation::mysql"
 include_recipe "pivotal_workstation::user_ssh_keys"
 
