@@ -1,4 +1,3 @@
-include_recipe "pivotal_workstation::github_for_mac"
-include_recipe "pivotal_workstation::firefox"
-include_recipe "pivotal_workstation::dropbox"
-include_recipe "pivotal_workstation::virtualbox"
+include_recipe "pivotal_workstation::vim"
+include_recipe "pivotal_workstation::textmate_bundles"
+include_recipe "pivotal_workstation::textmate_preferences"
